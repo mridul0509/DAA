@@ -16,6 +16,7 @@ int main()
         {
             cin >> arr[i];
         }
+        int count=0;
         for (int i = n-1; i >= 0; i--)
         {
             int j = 0, k = i - 1;
@@ -23,6 +24,7 @@ int main()
             {
                 if (arr[i] == arr[j] + arr[k])
                 {
+                    count = 1;
                     cout << j+1 << "," << k+1 << "," << i+1 << endl;
                     j++;
                     k--;
@@ -33,6 +35,8 @@ int main()
                     j++;
             }
         }
+        if(count == 0)
+            cout << "No sequence found" << endl;
         t--;
     }
     return 0;
